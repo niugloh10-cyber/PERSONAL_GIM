@@ -50,19 +50,26 @@ const {
 const { programarBackupDiario } = require('./services/backupService');
 
 // ── Módulos de dominio ────────────────────────────────────────
-const modDocumentos   = require('./modules/documentos');
-const modCargos       = require('./modules/cargos');
-const modPersonal     = require('./modules/personal');
-const modContratos    = require('./modules/contratos');
-const modEvaluaciones = require('./modules/evaluaciones');
-const modConclusiones = require('./modules/conclusiones');
-const modProyectos    = require('./modules/proyectos');
-const modAsistencia   = require('./modules/asistencia');
-const modLegajo       = require('./modules/legajo');
-const modReportes     = require('./modules/reportes');
-const modUsuarios     = require('./modules/usuarios');
-const modAuditoria    = require('./modules/auditoria');
-const modSistema      = require('./modules/sistema');
+const modDocumentos      = require('./modules/documentos');
+const modCargos          = require('./modules/cargos');
+const modPersonal        = require('./modules/personal');
+const modContratos       = require('./modules/contratos');
+const modEvaluaciones    = require('./modules/evaluaciones');
+const modConclusiones    = require('./modules/conclusiones');
+const modProyectos       = require('./modules/proyectos');
+const modAsistencia      = require('./modules/asistencia');
+const modLegajo          = require('./modules/legajo');
+const modVacaciones      = require('./modules/vacaciones');
+const modActivos         = require('./modules/activos');
+const modCapacitaciones  = require('./modules/capacitaciones');
+const modSanciones       = require('./modules/sanciones');
+const modNotificaciones  = require('./modules/notificaciones');
+const modOrganigrama     = require('./modules/organigrama');
+const modPortal          = require('./modules/portal');
+const modReportes        = require('./modules/reportes');
+const modUsuarios        = require('./modules/usuarios');
+const modAuditoria       = require('./modules/auditoria');
+const modSistema         = require('./modules/sistema');
 let modConfiguracion;
 try {
   modConfiguracion = require('./modules/configuracion');
@@ -136,6 +143,11 @@ app.use(modEvaluaciones(mw));
 app.use(modConclusiones(mw));
 app.use(modAsistencia(mw));
 app.use(modLegajo(mw, uploadMiddleware));
+app.use(modVacaciones(mw));
+app.use(modSanciones(mw));
+app.use(modCapacitaciones(mw));
+// Control de Activos
+app.use(modActivos(mw));
 // Gestión Documental
 app.use(modDocumentos(mw, uploadMiddleware));
 app.use(modCargos(mw, uploadMiddleware));
@@ -143,6 +155,12 @@ app.use(modCargos(mw, uploadMiddleware));
 app.use(modProyectos(mw, uploadMiddleware));
 // Reportes
 app.use(modReportes(mw));
+// Organigrama
+app.use(modOrganigrama(mw));
+// Portal del Trabajador (autenticación propia, sin mw.autenticar)
+app.use(modPortal(mw));
+// Notificaciones
+app.use(modNotificaciones(mw));
 // Administración
 app.use(modUsuarios(usersMgr, sessionMgr, auditMgr, mw));
 app.use(modAuditoria(auditMgr, mw));

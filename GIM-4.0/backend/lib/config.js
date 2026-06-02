@@ -31,6 +31,12 @@ const RUTAS = {
   PERSONAL_BD: path.join(DATA_DIR, 'personal.xlsx'),
   ASISTENCIA: path.join(DATA_DIR, 'asistencia.json'),
   EXPEDIENTES_INDEX: path.join(DATA_DIR, 'expedientes.json'),
+  VACACIONES:        path.join(DATA_DIR, 'vacaciones.json'),
+  ACTIVOS:           path.join(DATA_DIR, 'activos.json'),
+  CAPACITACIONES:    path.join(DATA_DIR, 'capacitaciones.json'),
+  SANCIONES:         path.join(DATA_DIR, 'sanciones.json'),
+  NOTIFICACIONES:    path.join(DATA_DIR, 'notificaciones.json'),
+  ORGANIGRAMA:       path.join(DATA_DIR, 'organigrama.json'),
   USUARIOS:  path.join(DATA_DIR, 'usuarios.json'),
   SESIONES:  path.join(DATA_DIR, 'sesiones.json'),
   LOGS:      path.join(LOGS_DIR, 'audit.json'),
@@ -59,7 +65,7 @@ const UPLOAD = {
   ALLOWED_EXTENSIONS: ['.docx', '.xlsx', '.xls', '.pdf', '.jpg', '.jpeg', '.png'],
 };
 
-const VERSION = '4.1.0';
+const VERSION = '4.2.0';
 const VERSION_NOMBRE = 'Arquitectura Modular Empresarial';
 
 module.exports = { RUTAS, SECURITY, UPLOAD, VERSION, VERSION_NOMBRE };
