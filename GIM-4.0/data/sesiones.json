@@ -1,0 +1,15 @@
+[
+  {
+    "token": "tok_9b744b1ea999c1e8a69feb2b68c47235726ccb920e26954a0711d77bd7661e2e1612c6635f2729e249df918e0f4a7e2e",
+    "usuarioId": "usr_4fd27a651f0929a7eb68e70e",
+    "email": "admin@gim.local",
+    "nombre": "Administrador",
+    "apellido": "Del Sistema",
+    "rol": "super_admin",
+    "creadaEn": "2026-06-02T18:41:07.600Z",
+    "ultimaActividad": "2026-06-02T18:41:07.601Z",
+    "expiresAt": "2026-06-03T18:41:07.601Z",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "curl/8.5.0"
+  }
+]

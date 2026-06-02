@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "actualizado": "2026-06-02T18:41:04.798Z",
+  "grupos": [
+    {
+      "id": "inicio",
+      "nombre": "",
+      "icono": "",
+      "habilitado": true,
+      "orden": 1,
+      "sinTitulo": true,
+      "items": [
+        {
+          "id": "inicio",
+          "nombre": "Inicio",
+          "icono": "🏠",
+          "vista": "inicio",
+          "habilitado": true,
+          "orden": 1,
+          "permiso": "",
+          "apiPrefijos": []
+        }
+      ]
+    },
+    {
+      "id": "rrhh",
+      "nombre": "Recursos Humanos",
+      "icono": "👥",
+      "habilitado": true,
+      "orden": 2,
+      "items": [
+        {
+          "id": "personal",
+          "nombre": "Personal",
+          "icono": "📊",
+          "vista": "personal",
+          "habilitado": true,
+          "orden": 1,
+          "permiso": "registros.ver",
+          "apiPrefijos": [
+            "/api/personal"
+          ]
+        },
+        {
+          "id": "contratos",
+          "nombre": "Contratos",
+          "icono": "📋",
+          "vista": "contratos",
+          "habilitado": true,
+          "orden": 2,
+          "permiso": "registros.ver",
+          "apiPrefijos": []
+        },
+        {
+          "id": "legajo",
+          "nombre": "Legajo Digital",
+          "icono": "🗂️",
+          "vista": "legajo",
+          "habilitado": true,
+          "orden": 3,
+          "permiso": "legajo.ver",
+          "apiPrefijos": [
+            "/api/legajo"
+          ]
+        },
+        {
+          "id": "asistencia",
+          "nombre": "Asistencia",
+          "icono": "🕐",
+          "vista": "asistencia",
+          "habilitado": true,
+          "orden": 4,
+          "permiso": "asistencia.ver",
+          "apiPrefijos": [
+            "/api/asistencia"
+          ]
+        },
+        {
+          "id": "evaluaciones",
+          "nombre": "Evaluaciones",
+          "icono": "⭐",
+          "vista": "evaluaciones",
+          "habilitado": true,
+          "orden": 5,
+          "permiso": "registros.ver",
+          "apiPrefijos": [
+            "/api/personal/evaluaciones"
+          ]
+        },
+        {
+          "id": "conclusiones",
+          "nombre": "Conclusiones",
+          "icono": "📄",
+          "vista": "conclusiones",
+          "habilitado": true,
+          "orden": 6,
+          "permiso": "registros.ver",
+          "apiPrefijos": [
+            "/api/personal/carta-conclusion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "docs",
+      "nombre": "Gestión Documental",
+      "icono": "📄",
+      "habilitado": true,
+      "orden": 3,
+      "items": [
+        {
+          "id": "generar",
+          "nombre": "Memorandos",
+          "icono": "✍️",
+          "vista": "generar",
+          "habilitado": true,
+          "orden": 1,
+          "permiso": "generar.ver",
+          "apiPrefijos": [
+            "/api/generar",
+            "/api/preview"
+          ]
+        },
+        {
+          "id": "registros",
+          "nombre": "Registros",
+          "icono": "🗃️",
+          "vista": "registros",
+          "habilitado": true,
+          "orden": 2,
+          "permiso": "registros.ver",
+          "apiPrefijos": [
+            "/api/registros"
+          ]
+        },
+        {
+          "id": "cargos",
+          "nombre": "Cargos y Plantillas",
+          "icono": "🏷️",
+          "vista": "cargos",
+          "habilitado": true,
+          "orden": 3,
+          "permiso": "cargos.ver",
+          "apiPrefijos": [
+            "/api/cargos",
+            "/api/plantillas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proy",
+      "nombre": "Proyectos",
+      "icono": "🏗️",
+      "habilitado": true,
+      "orden": 4,
+      "items": [
+        {
+          "id": "proyectos",
+          "nombre": "Proyectos",
+          "icono": "🏗️",
+          "vista": "proyectos",
+          "habilitado": true,
+          "orden": 1,
+          "permiso": "registros.ver",
+          "apiPrefijos": [
+            "/api/proyectos"
+          ]
+        },
+        {
+          "id": "personal-asignado",
+          "nombre": "Personal Asignado",
+          "icono": "👷",
+          "vista": "personal-asignado",
+          "habilitado": true,
+          "orden": 2,
+          "permiso": "registros.ver",
+          "apiPrefijos": []
+        }
+      ]
+    },
+    {
+      "id": "rep",
+      "nombre": "Reportes",
+      "icono": "📊",
+      "habilitado": true,
+      "orden": 5,
+      "items": [
+        {
+          "id": "indicadores",
+          "nombre": "Indicadores",
+          "icono": "📈",
+          "vista": "indicadores",
+          "habilitado": true,
+          "orden": 1,
+          "permiso": "registros.ver",
+          "apiPrefijos": [
+            "/api/reportes"
+          ]
+        },
+        {
+          "id": "estadisticas",
+          "nombre": "Estadísticas",
+          "icono": "📊",
+          "vista": "estadisticas",
+          "habilitado": true,
+          "orden": 2,
+          "permiso": "registros.ver",
+          "apiPrefijos": []
+        },
+        {
+          "id": "exportaciones",
+          "nombre": "Exportaciones",
+          "icono": "⬇️",
+          "vista": "exportaciones",
+          "habilitado": true,
+          "orden": 3,
+          "permiso": "registros.exportar",
+          "apiPrefijos": []
+        }
+      ]
+    },
+    {
+      "id": "admin",
+      "nombre": "Administración",
+      "icono": "⚙️",
+      "habilitado": true,
+      "orden": 6,
+      "items": [
+        {
+          "id": "usuarios",
+          "nombre": "Usuarios",
+          "icono": "👤",
+          "vista": "usuarios",
+          "habilitado": true,
+          "orden": 1,
+          "permiso": "usuarios.ver",
+          "apiPrefijos": [
+            "/api/usuarios"
+          ]
+        },
+        {
+          "id": "roles",
+          "nombre": "Roles",
+          "icono": "🔐",
+          "vista": "roles",
+          "habilitado": true,
+          "orden": 2,
+          "permiso": "usuarios.ver",
+          "apiPrefijos": []
+        },
+        {
+          "id": "modulos",
+          "nombre": "Módulos del Sistema",
+          "icono": "🧩",
+          "vista": "modulos",
+          "habilitado": true,
+          "orden": 3,
+          "permiso": "modulos.configurar",
+          "apiPrefijos": []
+        },
+        {
+          "id": "auditoria",
+          "nombre": "Auditoría",
+          "icono": "📜",
+          "vista": "auditoria",
+          "habilitado": true,
+          "orden": 4,
+          "permiso": "logs.ver",
+          "apiPrefijos": [
+            "/api/logs"
+          ]
+        },
+        {
+          "id": "backups",
+          "nombre": "Backups",
+          "icono": "💿",
+          "vista": "backups",
+          "habilitado": true,
+          "orden": 5,
+          "permiso": "sistema.respaldos",
+          "apiPrefijos": [
+            "/api/backup"
+          ]
+        },
+        {
+          "id": "config",
+          "nombre": "Configuración",
+          "icono": "⚙️",
+          "vista": "config",
+          "habilitado": true,
+          "orden": 6,
+          "permiso": "config.ver",
+          "apiPrefijos": [
+            "/api/config"
+          ]
+        }
+      ]
+    }
+  ]
+}

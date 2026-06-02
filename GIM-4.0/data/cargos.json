@@ -1,0 +1,74 @@
+[
+  {
+    "codigo": "AR",
+    "nombre": "RESIDENTE DE OBRA I",
+    "plantilla": "AR.docx",
+    "monto": 4000,
+    "requisitos": "Ingeniero, arquitecto o según el tipo de PIP. Colegiatura de 0 a más años.",
+    "requiereCIP": true,
+    "activo": true
+  },
+  {
+    "codigo": "AAT",
+    "nombre": "ASISTENTE TÉCNICO I",
+    "plantilla": "AAT.docx",
+    "monto": 2700,
+    "requisitos": "Bachiller en Ingeniería y/o Arquitectura y/o Titulado en Ingeniería.",
+    "requiereCIP": false,
+    "activo": true
+  },
+  {
+    "codigo": "AAA",
+    "nombre": "ASISTENTE ADMINISTRATIVO I",
+    "plantilla": "AAA.docx",
+    "monto": 2100,
+    "requisitos": "Técnico en Contabilidad, Administración o estudios universitarios (Bachiller). Y/o titulado.",
+    "requiereCIP": false,
+    "activo": true
+  },
+  {
+    "codigo": "AAL",
+    "nombre": "ALMACENERO",
+    "plantilla": "AAL.docx",
+    "monto": 2100,
+    "requisitos": "Técnico en Contabilidad, Administración o estudios universitarios (Bachiller) o estudios concluidos.",
+    "requiereCIP": false,
+    "activo": true
+  },
+  {
+    "codigo": "AG",
+    "nombre": "GUARDIÁN DE OBRA",
+    "plantilla": "AG.docx",
+    "monto": 1800,
+    "requisitos": "Secundaria completa.",
+    "requiereCIP": false,
+    "activo": true
+  },
+  {
+    "codigo": "AM",
+    "nombre": "MAESTRO DE OBRA",
+    "plantilla": "AM.docx",
+    "monto": 2600,
+    "requisitos": "Técnico en Construcción Civil o contar experiencia de 3 años.",
+    "requiereCIP": false,
+    "activo": true
+  },
+  {
+    "codigo": "AT",
+    "nombre": "TOPÓGRAFO",
+    "plantilla": "AT.docx",
+    "monto": 2700,
+    "requisitos": "Técnico o Bachiller en Topografía o Ingeniería c/experiencia.",
+    "requiereCIP": false,
+    "activo": true
+  },
+  {
+    "codigo": "ATS",
+    "nombre": "TÉCNICO EN SEGURIDAD",
+    "plantilla": "ATS.docx",
+    "monto": 2500,
+    "requisitos": "Bachiller en Ingeniería y/o Arquitectura.",
+    "requiereCIP": false,
+    "activo": true
+  }
+]
