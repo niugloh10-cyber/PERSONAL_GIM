@@ -5,117 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-<title>Sistema GIM v4.0 — Arquitectura Modular | MPP</title>
+<title>Sistema GIM v4.2 — GIM · MPP</title>
 <link rel="stylesheet" href="css/style.css">
-<style>
-  .user-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:4px 12px;font-size:12px;color:#fff}
-  .user-badge .role{background:rgba(255,255,255,.25);border-radius:10px;padding:1px 8px;font-size:11px;font-weight:600}
-  .btn-logout{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;transition:background .2s}
-  .btn-logout:hover{background:rgba(255,255,255,.25)}
-  #paginadorRegistros,#paginadorProyectos{margin-top:4px}
-  .version-tag{font-size:10px;background:rgba(255,255,255,.2);border-radius:10px;padding:1px 8px;margin-left:6px;vertical-align:middle}
-  .backup-actions{margin-top:20px;padding:16px;background:#f0f4f8;border-radius:8px;border:1px solid #e2e8f0}
-  .backup-actions h4{margin:0 0 10px;font-size:14px;color:#1a3c6e}
-</style>
 </head>
 <body>
-<header class="app-header">
-  <div class="header-content">
-    <div class="header-title" style="display:flex;align-items:center;gap:12px">
-      <button id="btnMenuToggle" class="btn-menu-toggle" title="Menú">&#9776;</button>
-      <div>
-        <h1>SISTEMA GIM <span class="version-tag">v4.0</span></h1>
-        <span class="header-subtitle">Gerencia de Ingeniería Municipal · Municipalidad Provincial de Puno</span>
+<div class="app-shell">
+
+  <!-- ════════ SIDEBAR ════════ -->
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-icon">⚙️</div>
+        <div class="sidebar-logo-text">
+          <h2>SISTEMA GIM</h2>
+          <p>Ing. Municipal · MPP</p>
+        </div>
+      </div>
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar" id="userAvatar">A</div>
+        <div class="sidebar-user-info">
+          <strong id="userName">Cargando...</strong>
+          <small id="userRole">—</small>
+        </div>
       </div>
     </div>
-    <div class="header-actions">
-      <span id="userInfo" class="user-badge">
-        <span id="userName">Cargando...</span>
-        <span id="userRole" class="role"></span>
-      </span>
-      <button id="btnAyuda"  class="btn-icon" title="Ayuda">?</button>
-      <button id="btnLogout" class="btn-logout" title="Cerrar sesion">&#9211; Salir</button>
+
+    <nav id="navMenu"><!-- construido por nav.js --></nav>
+
+    <div class="sidebar-footer">
+      <button class="btn-logout" id="btnLogout">
+        <span>🚪</span> Cerrar Sesión
+      </button>
     </div>
-  </div>
-</header>
-
-<div class="layout">
-  <!-- ════════════ SIDEBAR ════════════ -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-brand">
-      <b>GIM 4.0</b>
-      <span>Arquitectura Modular</span>
-    </div>
-
-    <nav id="navMenu">
-      <!-- INICIO -->
-      <div class="nav-group">
-        <div class="nav-items">
-          <div class="nav-item active" data-view="inicio"><span class="ic">🏠</span> Inicio</div>
-        </div>
-      </div>
-
-      <!-- RECURSOS HUMANOS -->
-      <div class="nav-group" data-group="rrhh">
-        <div class="nav-group-title"><span>👥 Recursos Humanos</span><span class="chev">▼</span></div>
-        <div class="nav-items">
-          <div class="nav-item" data-view="personal"><span class="ic">📊</span> Personal</div>
-          <div class="nav-item" data-view="contratos"><span class="ic">📋</span> Contratos</div>
-          <div class="nav-item" data-view="legajo"><span class="ic">🗂️</span> Legajo Digital</div>
-          <div class="nav-item" data-view="asistencia"><span class="ic">🕐</span> Asistencia</div>
-          <div class="nav-item" data-view="evaluaciones"><span class="ic">⭐</span> Evaluaciones</div>
-          <div class="nav-item" data-view="conclusiones"><span class="ic">📄</span> Conclusiones</div>
-        </div>
-      </div>
-
-      <!-- GESTIÓN DOCUMENTAL -->
-      <div class="nav-group" data-group="docs">
-        <div class="nav-group-title"><span>📄 Gestión Documental</span><span class="chev">▼</span></div>
-        <div class="nav-items">
-          <div class="nav-item" data-view="generar"><span class="ic">✍️</span> Memorandos</div>
-          <div class="nav-item" data-view="registros"><span class="ic">🗃️</span> Registros</div>
-          <div class="nav-item" data-view="cargos"><span class="ic">🏷️</span> Cargos y Plantillas</div>
-        </div>
-      </div>
-
-      <!-- PROYECTOS -->
-      <div class="nav-group" data-group="proy">
-        <div class="nav-group-title"><span>🏗️ Proyectos</span><span class="chev">▼</span></div>
-        <div class="nav-items">
-          <div class="nav-item" data-view="proyectos"><span class="ic">🏗️</span> Proyectos</div>
-          <div class="nav-item" data-view="personal-asignado"><span class="ic">👷</span> Personal Asignado</div>
-        </div>
-      </div>
-
-      <!-- REPORTES -->
-      <div class="nav-group" data-group="rep">
-        <div class="nav-group-title"><span>📊 Reportes</span><span class="chev">▼</span></div>
-        <div class="nav-items">
-          <div class="nav-item" data-view="indicadores"><span class="ic">📈</span> Indicadores</div>
-          <div class="nav-item" data-view="estadisticas"><span class="ic">📊</span> Estadísticas</div>
-          <div class="nav-item" data-view="exportaciones"><span class="ic">⬇️</span> Exportaciones</div>
-        </div>
-      </div>
-
-      <!-- ADMINISTRACIÓN -->
-      <div class="nav-group" data-group="admin">
-        <div class="nav-group-title"><span>⚙️ Administración</span><span class="chev">▼</span></div>
-        <div class="nav-items">
-          <div class="nav-item" data-view="usuarios" data-perm="usuarios.ver"><span class="ic">👤</span> Usuarios</div>
-          <div class="nav-item" data-view="roles"><span class="ic">🔐</span> Roles</div>
-          <div class="nav-item" data-view="auditoria" data-perm="logs.ver"><span class="ic">📜</span> Auditoría</div>
-          <div class="nav-item" data-view="backups" data-perm="sistema.respaldos"><span class="ic">💿</span> Backups</div>
-          <div class="nav-item" data-view="config"><span class="ic">⚙️</span> Configuración</div>
-        </div>
-      </div>
-    </nav>
   </aside>
 
-  <!-- ════════════ CONTENIDO ════════════ -->
-  <main class="app-main">
+  <!-- ════════ PANEL DERECHO ════════ -->
+  <div class="app-right">
 
-  <!-- ════════════ VISTA EXCLUSIVA: USUARIO BÁSICO (solo carga) ════════════ -->
-  <section id="tab-basico" class="tab-content">
+    <!-- Topbar -->
+    <div class="app-topbar">
+      <div class="topbar-left">
+        <button class="btn-menu-toggle" id="btnMenuToggle" title="Menú">☰</button>
+        <div id="breadcrumb">
+          <span>GIM</span> <span style="opacity:.4">/</span> <strong id="breadcrumbView">Inicio</strong>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-notif" id="btnNotif" title="Notificaciones">
+          🔔
+          <span class="notif-count" id="notifCount">0</span>
+        </button>
+        <span class="topbar-version">v4.2.0</span>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="app-main" id="appMain">
+
+<section id="tab-basico" class="tab-content">
     <div class="section-header">
       <h2>📝 Carga de Información</h2>
       <p class="section-desc">Registro de datos del trabajador y carga de documentos al legajo. Esta sesión es de solo carga: la información se integra automáticamente al sistema y no se muestran datos de sesiones anteriores.</p>
@@ -521,7 +468,7 @@
 
 
   <!-- ════════════ TAB: INICIO ════════════ -->
-  <section id="tab-inicio" class="tab-content active">
+  <section id="tab-inicio" class="tab-content">
     <div class="section-header">
       <h2>🏠 Panel de Inicio</h2>
       <p class="section-desc">Resumen ejecutivo del Sistema de Gestión Integral Municipal</p>
@@ -782,7 +729,182 @@
     </div>
     <div id="modulosContainer"></div>
   </section>
-  </main>
+  
+
+
+  <!-- TAB: VACACIONES -->
+  <section id="tab-vacaciones" class="tab-content">
+    <div class="page-header">
+      <div class="page-header-left">
+        <h2>🌴 Vacaciones y Licencias</h2>
+        <p>Gestión de solicitudes de vacaciones, licencias y permisos del personal</p>
+      </div>
+      <div class="page-header-actions">
+        <button class="btn btn-primary" onclick="abrirModalVacacion()">➕ Nueva Solicitud</button>
+      </div>
+    </div>
+    <div id="vacKpi" class="kpi-grid" style="margin-bottom:20px"></div>
+    <div class="card">
+      <div class="card-header">
+        <h3><span class="ic">🌴</span> Solicitudes</h3>
+        <div class="search-bar">
+          <select id="vacFiltroEstado" class="form-control" style="width:140px" onchange="loadVacaciones()">
+            <option value="">Todos los estados</option>
+            <option value="PENDIENTE">Pendiente</option>
+            <option value="APROBADA">Aprobada</option>
+            <option value="RECHAZADA">Rechazada</option>
+          </select>
+          <input type="text" id="vacFiltroDni" class="form-control" placeholder="Buscar por DNI..." style="width:160px" oninput="loadVacaciones()">
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Trabajador</th><th>DNI</th><th>Tipo</th><th>Desde</th><th>Hasta</th><th>Días</th><th>Estado</th><th>Acciones</th></tr></thead>
+          <tbody id="vacTbody"><tr><td colspan="8" class="text-center" style="padding:40px;color:var(--text-muted)"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB: SANCIONES -->
+  <section id="tab-sanciones" class="tab-content">
+    <div class="page-header">
+      <div class="page-header-left">
+        <h2>⚠️ Sanciones Disciplinarias</h2>
+        <p>Registro de amonestaciones, suspensiones y procesos administrativos</p>
+      </div>
+      <div class="page-header-actions">
+        <button class="btn btn-primary" onclick="abrirModalSancion()">➕ Registrar Sanción</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3><span class="ic">⚠️</span> Historial de Sanciones</h3>
+        <div class="search-bar">
+          <select id="sanFiltroTipo" class="form-control" style="width:160px" onchange="loadSanciones()">
+            <option value="">Todos los tipos</option>
+            <option value="AMONESTACION_VERBAL">Amonestación Verbal</option>
+            <option value="AMONESTACION_ESCRITA">Amonestación Escrita</option>
+            <option value="SUSPENSION">Suspensión</option>
+            <option value="PAD">PAD</option>
+          </select>
+          <input type="text" id="sanFiltroDni" class="form-control" placeholder="Buscar por DNI..." style="width:160px" oninput="loadSanciones()">
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Trabajador</th><th>DNI</th><th>Tipo</th><th>Fecha</th><th>Motivo</th><th>Estado</th><th>Acciones</th></tr></thead>
+          <tbody id="sanTbody"><tr><td colspan="7" class="text-center" style="padding:40px;color:var(--text-muted)"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB: CAPACITACIONES -->
+  <section id="tab-capacitaciones" class="tab-content">
+    <div class="page-header">
+      <div class="page-header-left">
+        <h2>🎓 Capacitaciones</h2>
+        <p>Cursos, talleres y seminarios del personal de la GIM</p>
+      </div>
+      <div class="page-header-actions">
+        <button class="btn btn-primary" onclick="abrirModalCapacitacion()">➕ Nueva Capacitación</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3><span class="ic">🎓</span> Programa de Capacitaciones</h3>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Título</th><th>Tipo</th><th>Institución</th><th>Fecha</th><th>Horas</th><th>Participantes</th><th>Acciones</th></tr></thead>
+          <tbody id="capTbody"><tr><td colspan="7" class="text-center" style="padding:40px;color:var(--text-muted)"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB: ACTIVOS -->
+  <section id="tab-activos" class="tab-content">
+    <div class="page-header">
+      <div class="page-header-left">
+        <h2>📦 Control de Activos</h2>
+        <p>Inventario de bienes asignados al personal de la GIM</p>
+      </div>
+      <div class="page-header-actions">
+        <button class="btn btn-primary" onclick="abrirModalActivo()">➕ Registrar Activo</button>
+      </div>
+    </div>
+    <div id="activosKpi" class="kpi-grid" style="margin-bottom:20px"></div>
+    <div class="card">
+      <div class="card-header">
+        <h3><span class="ic">📦</span> Inventario</h3>
+        <div class="search-bar">
+          <select id="actFiltroCategoria" class="form-control" style="width:160px" onchange="loadActivos()">
+            <option value="">Todas las categorías</option>
+            <option value="EQUIPO_COMPUTO">Equipo de cómputo</option>
+            <option value="MOBILIARIO">Mobiliario</option>
+            <option value="VEHICULO">Vehículo</option>
+            <option value="HERRAMIENTA">Herramienta</option>
+            <option value="INSTRUMENTO">Instrumento</option>
+            <option value="OTRO">Otro</option>
+          </select>
+          <input type="text" id="actFiltroQ" class="form-control" placeholder="Buscar..." style="width:180px" oninput="loadActivos()">
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código</th><th>Descripción</th><th>Categoría</th><th>Estado</th><th>Asignado a</th><th>Acciones</th></tr></thead>
+          <tbody id="activosTbody"><tr><td colspan="6" class="text-center" style="padding:40px;color:var(--text-muted)"><div class="spinner" style="margin:0 auto"></div></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB: ORGANIGRAMA -->
+  <section id="tab-organigrama" class="tab-content">
+    <div class="page-header">
+      <div class="page-header-left">
+        <h2>🌳 Organigrama GIM</h2>
+        <p>Estructura jerárquica de la Gerencia de Ingeniería Municipal</p>
+      </div>
+      <div class="page-header-actions">
+        <button class="btn btn-primary" onclick="abrirModalNodoOrg()">➕ Agregar Nodo</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body" id="orgContainer">
+        <div class="empty-state">
+          <span class="ic">🌳</span>
+          <h4>Sin estructura definida</h4>
+          <p>Agregue nodos para construir el organigrama de la GIM</p>
+          <button class="btn btn-primary" onclick="abrirModalNodoOrg()">Agregar primer nodo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB: NOTIFICACIONES -->
+  <section id="tab-notificaciones" class="tab-content">
+    <div class="page-header">
+      <div class="page-header-left">
+        <h2>🔔 Notificaciones</h2>
+        <p>Alertas y avisos del sistema</p>
+      </div>
+      <div class="page-header-actions">
+        <button class="btn btn-secondary" onclick="marcarTodasLeidasNotif()">✓ Marcar todas como leídas</button>
+      </div>
+    </div>
+    <div id="notifList" class="card">
+      <div class="loading-state"><div class="spinner"></div></div>
+    </div>
+  </section>
+
+    </main><!-- /.app-main -->
+  </div><!-- /.app-right -->
+</div><!-- /.app-shell -->
+
+
 </div><!-- /.layout -->
 
 <!-- MODALES -->
@@ -1024,6 +1146,8 @@
 <script src="js/modules/views.js"></script>
 <script src="js/modules/nav.js"></script>
 <script src="js/modules/extras-v4.js"></script>
+<script src="js/modules/views-nuevos.js"></script>
 <script src="js/modules/basico.js"></script>
+
 </body>
 </html>
