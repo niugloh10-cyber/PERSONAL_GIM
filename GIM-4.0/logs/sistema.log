@@ -1,0 +1,6 @@
+[2026-06-02T18:41:04.794Z] [INFO] [Server] Sistema GIM v4.2.0 (Arquitectura Modular Empresarial) iniciando...
+[2026-06-02T18:41:04.891Z] [INFO] [Server] 👤 Usuario administrador creado {"email":"admin@gim.local"}
+[2026-06-02T18:41:04.893Z] [INFO] [BackupService] Próximo backup automático en 7 horas
+[2026-06-02T18:41:04.899Z] [INFO] [Server] Servidor escuchando en http://localhost:3000
+[2026-06-02T18:41:05.424Z] [INFO] [LegajoSync] Sincronización del Expediente Único completada {"totalExpedientes":257,"nuevosExpedientes":257,"nuevasActuaciones":688,"expedientesActualizados":771}
+[2026-06-02T18:41:05.424Z] [INFO] [Server] Legajo sincronizado al inicio {"totalExpedientes":257,"nuevosExpedientes":257,"nuevasActuaciones":688,"expedientesActualizados":771}

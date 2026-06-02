@@ -1,0 +1,15 @@
+[
+  {
+    "id": "evt_ef5439b85e8389d9_mpwzh1ck",
+    "timestamp": "2026-06-02T18:41:07.604Z",
+    "tipo": "LOGIN",
+    "usuarioId": "usr_4fd27a651f0929a7eb68e70e",
+    "nivel": "INFO",
+    "detalles": {
+      "email": "admin@gim.local",
+      "rol": "super_admin",
+      "ipAddress": "127.0.0.1",
+      "userAgent": null
+    }
+  }
+]

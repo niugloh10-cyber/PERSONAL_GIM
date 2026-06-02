@@ -1,0 +1,16 @@
+[
+  {
+    "id": "usr_4fd27a651f0929a7eb68e70e",
+    "email": "admin@gim.local",
+    "nombre": "Administrador",
+    "apellido": "Del Sistema",
+    "rol": "super_admin",
+    "contrasena_hash": "v3$9cbefad20e9a1ddd220fc0f92b073789431dcc0b4202638abd05a120d6c255e1$2829043599d9b189a66144aabc818ffd998f511387d2911c583e5dcaa8cac1479192d06d8e4911fc4f7e679a848f0140d1d2a593b0f0825e79858899e5844243",
+    "estado": "activo",
+    "fechaCreacion": "2026-06-02T18:41:04.890Z",
+    "fechaUltimoLogin": "2026-06-02T18:41:07.603Z",
+    "intentosFallidos": 0,
+    "bloqueadoHasta": null,
+    "notas": ""
+  }
+]
